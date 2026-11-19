@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeDrop - Blood Donation Camp</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">❤ Life<span>Drop</span></div>
+  <nav><a href="#home">Home</a><a href="#dashboard">Dashboard</a><a href="#register">Register</a><a href="#queue">Queue</a></nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Donate Blood.<br>Save Lives.</h1>
+    <p>Welcome to LifeDrop Blood Donation Camp Management System. Register as a donor, book your slot and help save lives.</p>
+    <button onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Register as Donor</button>
+  </div>
+  <div class="hero-icon">🩸</div>
+</section>
+
+<main class="container">
+<section id="dashboard">
+  <h2 class="section-title">Camp Dashboard</h2>
+  <div class="stats">
+    <div class="stat-card"><h3>Total Donors</h3><p id="total">0</p></div>
+    <div class="stat-card"><h3>Booked Slots</h3><p id="booked">0</p></div>
+    <div class="stat-card"><h3>Screening Pending</h3><p id="pending">0</p></div>
+    <div class="stat-card"><h3>Donations Completed</h3><p id="completed">0</p></div>
+  </div>
+</section>
+
+<div class="content-grid">
+  <section class="card" id="register">
+    <h2>Donor Registration</h2>
+    <form id="donorForm">
+      <label for="name">Full Name</label><input type="text" id="name" placeholder="Enter your name" required>
+      <label for="email">Email Address</label><input type="email" id="email" placeholder="Enter your email" required>
+      <label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="10-digit phone number" pattern="[0-9]{10}" required>
+      <label for="blood">Blood Group</label>
+      <select id="blood" required><option value="">Select Blood Group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select>
+      <button type="submit">Register Donor</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Slot Booking</h2>
+    <form id="bookingForm">
+      <label for="donorSelect">Select Donor</label><select id="donorSelect" required><option value="">Select Registered Donor</option></select>
+      <label for="date">Donation Date</label><input type="date" id="date" required>
+      <label for="time">Choose Time Slot</label>
+      <select id="time" required><option value="">Select Time</option><option>09:00 AM - 10:00 AM</option><option>10:00 AM - 11:00 AM</option><option>11:00 AM - 12:00 PM</option><option>12:00 PM - 01:00 PM</option></select>
+      <button type="submit">Book My Slot</button>
+    </form>
+  </section>
+</div>
+
+<section class="card" style="margin-bottom:35px">
+  <h2>Donor Eligibility Form</h2>
+  <div class="notice">This is a basic demonstration questionnaire. It does not determine medical eligibility. Qualified medical staff must make the final decision using current donation guidelines.</div>
+  <form id="eligibilityForm">
+    <label for="eligibilityDonor">Select Registered Donor</label><select id="eligibilityDonor" required><option value="">Select Donor</option></select>
+    <label class="check"><input type="checkbox" id="q1"> I confirm that I have provided truthful health information.</label>
+    <label class="check"><input type="checkbox" id="q2"> I agree to the screening process by medical staff.</label>
+    <label class="check"><input type="checkbox" id="q3"> I understand that final eligibility is decided by medical staff.</label>
+    <button type="submit">Submit Form</button>
+  </form>
+</section>
+
+<section class="table-box">
+  <h2 class="section-title">Screening Status</h2>
+  <table><thead><tr><th>Donor Name</th><th>Blood Group</th><th>Screening Status</th><th>Update Status (Demo)</th></tr></thead><tbody id="screeningTable"><tr><td colspan="4">No donors registered yet.</td></tr></tbody></table>
+</section>
+
+<section class="table-box" id="queue">
+  <h2 class="section-title">Queue Management</h2>
+  <table><thead><tr><th>Token No.</th><th>Donor Name</th><th>Time Slot</th><th>Queue Status</th></tr></thead><tbody id="queueTable"><tr><td colspan="4">No bookings available.</td></tr></tbody></table>
+</section>
+
+<section class="table-box">
+  <h2 class="section-title">Donation Status</h2>
+  <table><thead><tr><th>Donor Name</th><th>Donation Status</th><th>Update Status (Demo)</th></tr></thead><tbody id="donationTable"><tr><td colspan="3">No donors available.</td></tr></tbody></table>
+</section>
+</main>
+
+<footer>
+  <h3>❤ LifeDrop Blood Donation System</h3>
+  <p>Every Drop Counts. Every Life Matters.</p>
+  <p style="margin-top:10px">© 2026 LifeDrop | Student Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
